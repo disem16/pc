@@ -33,9 +33,22 @@ $user = $_SESSION["admin"];
 			setInterval(function (){
 				$('#show').load('data.php')
 			}, 0000);
+		
 		});
 		}
 	</script>
+	
+	<script type="text/javascript">
+		function vizAng(){
+		$(document).ready(function(){
+			setInterval(function (){
+				$('#angajati').load('vizualizeazaAngajati.php')
+			}, 0000);
+		});
+		}
+	</script>
+	
+	
 	</head>
 
 <body>
@@ -47,40 +60,31 @@ $user = $_SESSION["admin"];
 			<li><a href=''><span class="iconic plus-alt"></span> Date Personale</a>
 				<ul>
 					<li onClick = "return afisareDate();">
-					<a href="#" name="date" onClick="return afisareDate();" >Vizualizeaza date</a></li>
+					<a href="javascript:void(0);" name="date" onClick="return afisareDate(lastPosition);" >Vizualizeaza date</a></li>
+					
 					<li><a href="#">Modifica date</a></li>
+					
+					<li><a href="#">Cereri</a></li>
 				</ul>
 			</li>
 			<li><a href="#"><span class="iconic magnifying-glass"></span> Companie </a>
 				<ul>
-					<li><a href="#">Vizualizeaza angajati</a></li>
+					<li><a href="javascript:void(0);" onClick="return vizAng();">Vizualizeaza angajati</a></li>
 					<li><a href="#">Vizualizeaza cereri</a></li>
 					<li><a href="#">Contabilitate</a></li>
-
+					<li><a href="adaugaAngajat.php">Adauga Angajat</a></li>
+					<li><a href="#">Sterge Angajat</a></li>
+					<li><a href="#">Update Angajat</a></li>
 				</ul>
 			</li>
-			<li><a href="#"><span class="iconic map-pin"></span> Products</a>
-				<ul>
-					<li><a href="#">Widget One</a></li>
-					<li><a href="#">Widget Two</a></li>
-					<li><a href="#">Web App Three</a></li>
-					<li><a href="#">Web App Four</a></li>
-					<li><a href="#">Crazy Products</a></li>
-					<li><a href="#">iPhone Apps</a></li>
-				</ul>
-			</li>
-			<li><a href="#"><span class="iconic mail"></span> Contact Admin</a>
-				<ul>
-					<li><a href="#">Informeaza admin de probleme functionale</a></li>
-					<li><a href="#">Directions</a></li>
-				</ul>
+			<li><a href="login.php"><span class="iconic map-pin"></span> Log Out</a>
 			</li>
 		</ul>
 		<div class="clearfix"></div>
 	</nav>
 	</div>
-	<!-- here -->
-<section id='show'  name='show'> </section>
+<div align="center" id='show'  name='show'> </div>
+<div id='angajati' > </div>
 </body>
 
 </html>
